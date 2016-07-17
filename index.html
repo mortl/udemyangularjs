@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+	<meta charset="UTF-8">
+	<title>Udemy Tutorial</title>
+	<link rel="stylesheet" href="css/app.css">
+	
+</head>
+<body ng-init="people=[{name:'martin', city:'toronto'},{name:'nathan', city:'barrie'},{name:'tasha', city:'toronto'}]" >
+	
+	<div ng-hide="isHidden" ng-cloak>
+		Name: <input type="text" ng-model="name"/>
+		<span ng-cloak>{{ name | ucfirst }} </span>
+	</div>
+	Hide: <input type="checkbox" ng-model="isHidden"/>
+	<br>
+	<button  ng-click="name='tasha'">Change Name</button>
+
+
+	<ul  ng-cloak>
+		<li ng-repeat="person in people">{{person.name | ucfirst}}</li>
+	</ul>
+	<br>
+	<table ng-cloak>
+		<tr>
+			<td>Name</td>
+			<td>City</td>
+		</tr>
+		<tr ng-repeat="person in people">
+			<td>{{person.name | ucfirst}}</td>
+			<td>{{person.city | ucfirst}}</td>
+		</tr>
+	</table>
+
+	<br><br>
+	<h2> Customers</h2>
+	Filter: <input type="text" ng-model="customerFilter.name">
+	<table ng-controller="CustomerController as customer" ng-cloak>
+		<tr>
+			<th ng-click="sortBy='name';reverse=!reverse">Name</th>
+			<th ng-click="sortBy='city';reverse=!reverse">City</th>
+			<th ng-click="sortBy='orderTotal';reverse=!reverse">Order Total</th>
+			<th ng-click="sortBy='joined';reverse=!reverse">Joined</th>
+		</tr>
+		<tr ng-repeat="cust in customer.customers | filter:customerFilter | orderBy:sortBy:reverse">
+			<td>
+				{{cust.name }}
+			</td>
+			<td>
+				{{cust.city}}
+			</td>
+			<td>
+				{{cust.orderTotal | currency}}
+
+			</td>
+			<td>
+				{{cust.joined | date}}
+			</td>
+		</tr>
+	</table>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.7/angular.min.js"></script> 
+	<script src="js/libs/angular-filter.js"></script>
+	<script src="js/app.js"></script>
+</body>
+</html>
