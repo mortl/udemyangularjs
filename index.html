@@ -1,38 +1,17 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="myApp">
+<html lang="en" ng-app="customerApp">
 <head>
 	<meta charset="UTF-8">
 	<title>Udemy Tutorial</title>
-	<link rel="stylesheet" href="css/app.css">
+	<link rel="stylesheet" href="assets/css/app.css">
 	
 </head>
-<body ng-init="people=[{name:'martin', city:'toronto'},{name:'nathan', city:'barrie'},{name:'tasha', city:'toronto'}]" >
+<body>
 	
-	<div ng-hide="isHidden" ng-cloak>
-		Name: <input type="text" ng-model="name"/>
-		<span ng-cloak>{{ name | ucfirst }} </span>
-	</div>
-	Hide: <input type="checkbox" ng-model="isHidden"/>
-	<br>
-	<button  ng-click="name='tasha'">Change Name</button>
+	
 
 
-	<ul  ng-cloak>
-		<li ng-repeat="person in people">{{person.name | ucfirst}}</li>
-	</ul>
-	<br>
-	<table ng-cloak>
-		<tr>
-			<td>Name</td>
-			<td>City</td>
-		</tr>
-		<tr ng-repeat="person in people">
-			<td>{{person.name | ucfirst}}</td>
-			<td>{{person.city | ucfirst}}</td>
-		</tr>
-	</table>
 
-	<br><br>
 	<h2> Customers</h2>
 	Filter: <input type="text" ng-model="customerFilter.name">
 	<table ng-controller="CustomerController" ng-cloak>
@@ -61,8 +40,9 @@
 
 
 
-	<script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.7/angular.min.js"></script> 
-	<script src="js/libs/angular-filter.js"></script>
-	<script src="js/app.js"></script>
+	<script src="assets/libs/angular.min.js"></script> 
+	<script src="assets/libs/angular-filter.js"></script>
+	<script src="app/app.js"></script>
+	<script src="app/controllers/customer.controller.js" type="text/javascript"></script>
 </body>
 </html>

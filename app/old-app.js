@@ -1,7 +1,9 @@
 var app = angular.module('myApp',['angular.filter']);
 
 
-
+/*
+Scope based controller
+ */
 
 app.controller('CustomerController', function($scope){
 			$scope.customers = customers;
@@ -13,6 +15,19 @@ app.controller('CustomerController', function($scope){
 			};
 
 });
+
+// No Scope Injected. Either work fine.
+/*app.controller('CustomerController', function(){
+			this.customers = customers;
+			this.sortBy = 'name';
+			this.reverse = false;
+			$this.doSort = function(propName){
+				this.sortBy = propName;
+				this.reverse = !this.reverse;
+			};
+
+});*/
+
 
 app.controller('JobController',function($http){
 	$http.get("https://api.greenhouse.io/v1/boards/indexexchange/offices");
@@ -45,4 +60,4 @@ var customers = [{
 	name:'Alyssa',
 	city:'London',
 	orderTotal: 31.23321
-}]
+}];
