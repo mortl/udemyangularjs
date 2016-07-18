@@ -1,0 +1,59 @@
+{"customers":  [
+  {
+    "id":1,
+    "joined":"2000-12-03",
+	"name":"John",
+	"city":"Toronto",
+	"orderTotal": 9.454,
+	"orders":[
+	   {
+	   	"id":1,
+		"product":"TV",
+		"total":323.435
+		}
+	]
+},{
+	"id":2,
+	"joined":"1988-02-04",
+	"name":"Steve",
+	"city":"Los Angeles",
+	"orderTotal": 22.454,
+	"orders":[
+	   {
+	   	"id":2,
+		"product":"Guitar",
+		"total":430.553
+		}
+	]
+},
+{
+	"id":3,
+	"joined":"1965-09-12",
+	"name":"Bob",
+	"city":"New York",
+	"orderTotal": 39.454,
+	"orders":[
+	   {
+	   	"id":3,
+		"product":"Xbox One",
+		"total":499.765
+		}
+	]
+},
+{
+	"id":4,
+	"joined":"1990-07-22",
+	"name":"Alyssa",
+	"city":"London",
+	"orderTotal": 31.23321,
+	"orders":[
+	   {
+	   	"id":4,
+		"product":"Kindle",
+		"total":101.405
+		}
+	]
+
+}
+
+]}

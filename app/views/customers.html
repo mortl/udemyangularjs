@@ -1,0 +1,29 @@
+<h2> Customers</h2>
+Filter:
+<input type="text" ng-model="customerFilter.name">
+<table ng-cloak>
+    <tr>
+        <th ng-click="doSort('name')">Name</th>
+        <th ng-click="doSort('city')">City</th>
+        <th ng-click="doSort('orderTotal')">Order Total</th>
+        <th ng-click="doSort('joined')">Joined</th>
+        <th>&nbsp;</th>
+    </tr>
+    <tr ng-repeat="cust in customers | filter:customerFilter | orderBy:sortBy:reverse">
+        <td ng-cloak>
+            {{cust.name | ucfirst}}
+        </td>
+        <td ng-cloak>
+            {{cust.city}}
+        </td>
+        <td ng-cloak>
+            {{cust.orderTotal | currency}}
+        </td>
+        <td>
+            {{cust.joined | date}}
+        </td>
+        <td><a href="#/orders/{{ cust.id }}" title="">View Orders</a></td>
+    </tr>
+</table>
+<br>
+<span> Total Customers: {{ customers.length }}</span>

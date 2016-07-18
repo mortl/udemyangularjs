@@ -1,5 +1,18 @@
 	(function() {
 	 
-	 var app = angular.module('customerApp',[]);		 
+	 var app = angular.module('customerApp',['angular.filter','ngRoute']);		 
+
+	 app.config(function($routeProvider){
+	 		$routeProvider
+	 			.when('/', {
+	 				controller:'CustomerController',
+	 				templateUrl:'app/views/customers.html'
+	 			})
+	 			.when('/orders/:customerId', {
+	 				controller:'OrdersController',
+	 				templateUrl:'app/views/orders.html'
+	 			})
+	 			.otherwise( { redirectTo:'/' } );
+	 });
 
 	}());
