@@ -35,14 +35,14 @@
 	<br><br>
 	<h2> Customers</h2>
 	Filter: <input type="text" ng-model="customerFilter.name">
-	<table ng-controller="CustomerController as customer" ng-cloak>
+	<table ng-controller="CustomerController" ng-cloak>
 		<tr>
-			<th ng-click="sortBy='name';reverse=!reverse">Name</th>
-			<th ng-click="sortBy='city';reverse=!reverse">City</th>
-			<th ng-click="sortBy='orderTotal';reverse=!reverse">Order Total</th>
-			<th ng-click="sortBy='joined';reverse=!reverse">Joined</th>
+			<th ng-click="doSort('name')">Name</th>
+			<th ng-click="doSort('city')">City</th>
+			<th ng-click="doSort('orderTotal')">Order Total</th>
+			<th ng-click="doSort('joined')">Joined</th>
 		</tr>
-		<tr ng-repeat="cust in customer.customers | filter:customerFilter | orderBy:sortBy:reverse">
+		<tr ng-repeat="cust in customers | filter:customerFilter | orderBy:sortBy:reverse">
 			<td>
 				{{cust.name }}
 			</td>
@@ -58,6 +58,9 @@
 			</td>
 		</tr>
 	</table>
+
+
+
 	<script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.7/angular.min.js"></script> 
 	<script src="js/libs/angular-filter.js"></script>
 	<script src="js/app.js"></script>

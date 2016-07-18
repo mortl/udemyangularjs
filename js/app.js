@@ -3,9 +3,19 @@ var app = angular.module('myApp',['angular.filter']);
 
 
 
-app.controller('CustomerController', function(){
-			this.customers = customers;
+app.controller('CustomerController', function($scope){
+			$scope.customers = customers;
+			$scope.sortBy = 'name';
+			$scope.reverse = false;
+			$scope.doSort = function(propName){
+				$scope.sortBy = propName;
+				$scope.reverse = !$scope.reverse;
+			};
 
+});
+
+app.controller('JobController',function($http){
+	$http.get("https://api.greenhouse.io/v1/boards/indexexchange/offices");
 });
 
 
