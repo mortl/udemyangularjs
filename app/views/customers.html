@@ -1,7 +1,7 @@
-<h2> Customers</h2>
+<h2> {{ AppSettings.title }}</h2>
 Filter:
 <input type="text" ng-model="customerFilter.name">
-<table ng-cloak>
+<table ng-cloak class="table table-striped">
     <tr>
         <th ng-click="doSort('name')">Name</th>
         <th ng-click="doSort('city')">City</th>
@@ -22,8 +22,16 @@ Filter:
         <td>
             {{cust.joined | date}}
         </td>
-        <td><a href="#/orders/{{ cust.id }}" title="">View Orders</a></td>
+        <td>
+            <a href="#/orders/{{ cust.id }}" title="">View Orders</a>
+        </td>
+        <td class="center"><span class="glyphicon glyphicon-remove delete" ng-click="deleteCustomer(cust.id)"></span></td>
     </tr>
 </table>
 <br>
 <span> Total Customers: {{ customers.length }}</span>
+<br>
+<br><br>
+<footer>
+   Version: {{AppSettings.version}}
+</footer>

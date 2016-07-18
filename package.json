@@ -1,0 +1,29 @@
+{
+  "name": "udemyangularjs",
+  "version": "1.0.0",
+  "description": "Udemy Angular Js Jumpstart",
+  "main": "app/app.js",
+  "dependencies": {
+    "express": "^4.14.0"
+  },
+  "devDependencies": {
+    "express": "^4.14.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mortl/udemyangularjs.git"
+  },
+  "keywords": [
+    "angularjs"
+  ],
+  "author": "Martin Benes",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mortl/udemyangularjs/issues"
+  },
+  "homepage": "https://github.com/mortl/udemyangularjs#readme"
+}
