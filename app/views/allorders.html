@@ -12,12 +12,12 @@ Filter: <input type="text" ng-model="orderFilter.product" />
 		</tr>
 	</thead>
 	<tbody>
-		<tr ng-repeat="order in orders | filter:orderFilter | orderBy:'name'">
+		<tr ng-repeat="order in orders | filter:orderFilter | orderBy:'name'" class="repeat-animation">
 			<td>{{order.product}}</td>
 			<td>{{order.total | currency}}
 		</tr>
 		<tr ng-class="totalType">
-			<td>&nsbp;</td>
+			<td>&nbsp;</td>
 			<td>{{ ordersTotal | currency }}</td>
 		</tr>
 	</tbody>

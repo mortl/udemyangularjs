@@ -1,6 +1,6 @@
 	(function() {
 	 
-	 var app = angular.module('customerApp',['angular.filter','ngRoute']);		 
+	 var app = angular.module('customerApp',['angular.filter','ngRoute','ngAnimate']);		 
 
 	 app.config(function($routeProvider){
 	 		$routeProvider
